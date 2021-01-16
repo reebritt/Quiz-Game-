@@ -1,7 +1,10 @@
+
+
+
 var questions = [
   {
     question: "The album songs in A Minor was recorded by what artist?",
-    choices: ["Beyonce", "Alicia Keys", "", ""],
+    choices: ["Beyonce", "Alicia Keys", "Brandy", "Rihanna"],
    // answer should have matching string from choices 
    answer: "Alicia Keys"
 
@@ -17,7 +20,7 @@ var questions = [
 
     {
       question: "Which Michael Jackson Albumn was his best selling albumn?",
-      choices: ["Thriller", "Beat It", "", ""],
+      choices: ["Thriller", "Beat It", "Off the Wall", "Bad"],
      // answer should have matching string from choices 
      answer: "Thriller"
 
@@ -25,7 +28,7 @@ var questions = [
 
     {
       question: "Which groups hit song was No Scrubs",
-      choices: ["Destiny's Child", "", "TLC", ""],
+      choices: ["Destiny's Child", "SWV", "TLC", "En Vogue"],
      // answer should have matching string from choices 
      answer: "TLC"
 
@@ -33,7 +36,7 @@ var questions = [
 
     {
       question: "Which group was Jeffrey Osbourne the Lead singer of?" ,
-      choices: ["O'jays", "", "", "LTD"],
+      choices: ["O'jays", "Commodores", "Isley Brothers", "LTD"],
      // answer should have matching string from choices 
      answer: "LTD"
 

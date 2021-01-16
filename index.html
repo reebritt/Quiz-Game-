@@ -1,57 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Quiz Challenge</title>
-    <!--  Add javascript link --> 
-  
-    <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <!-- linking css and bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Assets/css/style.css">
+
+    <title>R&B Music Quiz</title>
 </head>
+
 <body>
-  <!-- <div class =container> --> 
-   <!--<div id="quiz"></div>   -->   
-  <!--  <button id="submit">Get Results</button> -->
-  <!-- <div id="results"></div>-->
-   
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-   <!--  <a class="navbar-brand bg-info text-white" href="#">Sheree Britt</a>  -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <nav class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="highscores.html">HighScores <span class="sr-only">(current)</span></a>
-        </li>
-           </ul>
-      </nav>
-  </nav>
-<main class="">
-<p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+    <!-- main content -->
+    <div class="container-fluid">
+        <!--Highscore link rop right and timer top left using Font awesom-->
+        <div class="row">
+            <div class="col text-left">
+                <a href="./highscores.html" id="HighScores">High Scores</a>
+            </div>
+            <div id="timer" class="col text-right">
+                <i class="far fa-clock"></i> Time: <span id="timeLeft">0</span>
+            </div>
+            <div id="timesUp" class="col text-right" style="display: none;">Time's Up!</div>
+        </div>
 
+        <div id="everything" class="row text-left">
+            <div class="col-md-2"></div>
+            <main class="col-md-8 mt-5">
+                <div id="start" class="m-2 justify-content-center">
+                    <p class="card-text">R&B Music Challenge</p>
+                    <p class="p-5">Who wants to have some fun and show what they know about R&B Music. Answer these
+                        questions within the time alloted and then check High scores </p>
+                    <button type="button" id="start-quiz-button" class="btn btn-info ml-5 align-center">Start
+                        Quiz</button>
+                </div>
 
-</main>
-    
+                <!--quiz div  -->
+                <div id="questionDiv" style="display: none;">
+                    <p id="questionTitle" class="pl-5 ml-2 pt-5 justify-content-center font-weight-bold"></p>
+                    <div class="pl-5 pt-2 pb-3 m-2 justify-content-center">
+                        <p><button id="btn0" class="btn btn-light"></button></p>
+                        <p><button id="btn1" class="btn btn-light"></button></p>
+                        <p><button id="btn2" class="btn btn-light"></button></p>
+                        <p><button id="btn3" class="btn btn-light"></button></p>
+                        <hr id="lineBreak" style="display: none" class="mt-4">
+                        <p id="answerCheck" style="display: none;"></p>
+                    </div>
+                </div>
 
-      
-</div> 
+                <!-- score div -->
+                <div class="pl-5 ml-2 pt-5 justify-content-center font-weight-bold" id="summary" style="display: none;">
+                    <div class="col-2"></div>
+                    <div class="col-8 text-left">
+                        <h2 class="font-weight-bold pt-2 pb-3 m-2">Congratulations your final score is <span id="finalScore"></span> !
+                        </h2>
+                        <form>
+                            <p class="pt-2 pb-3 m-2">Enter your initials: <input id="initialInput"
+                                    class="form-control pt-2 pb-3 mt-2" type="text">
+                                <button type="submit" id="submitInitialBtn" class="btn btn-info mt-3">Submit</button>
+                            </p>
+                        </form>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
 
- <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+                <div id="highScoreSection" class="pl-5 ml-4 pt-5 justify-content-center font-weight-bold"
+                    style="display: none;">
+                    <h2 class="font-weight-bold pt-2 pb-3 mb-2">High Scores</h2>
+
+                    <div id="listOfHighScores" class="list-group list-group-flush pt-2 pb-3 mb-2"></div>
+
+                    <p>
+                        <button type="submit" class="btn btn-info mt-3 mr-3" id="goBackBtn">Go Back</button>
+                        <button type="submit" class="btn btn-info mt-3" id="clearHighScoreBtn">Clear High
+                            Scores</button>
+                    </p>
+
+                </div>
+            </main>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="./Assets/javascript/questions.js"></script>
+    <script src="https://kit.fontawesome.com/1d37754851.js" crossorigin="anonymous"></script>
+
 </body>
-</html>
 
+</html>

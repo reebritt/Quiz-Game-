@@ -80,7 +80,6 @@ var questions = [
 ];
 
 
-
 var startDiv = document.getElementById("start");
 var startQuizBtn = document.getElementById("start-quiz-button");
 
@@ -167,18 +166,38 @@ choiceB.addEventListener("click", chooseB);
 choiceC.addEventListener("click", chooseC);
 choiceD.addEventListener("click", chooseD);
 
-submitInitialBtn.addEventListener("click", function (event) {
-  storeHighScores(event);
-});
+// //submitInitialBtn.addEventListener("click", function (event) {
+//   storeHighScores(event);
+// });
 
-HighScores.addEventListener("click", function (event) {
-  showHighScores(event);
-});
+// //HighScores.addEventListener("click", function (event) {
+//   showHighScores(event);
+// });
+
+function savedHighScore(){
+  var initials = initialInput.value.trim();
+  if (initials !== "") {
+    var highScores = JSON.parse(window.localStorage.getItem("highScores")) || [];
+    var newScore = {
+      score: correctAns,
+      initials: initials
+    };
+    console.log(newScore)
+    highScores.push(newScore);
+    window.localStorage.setItem("highScores", JSON.stringify(highScores));
+    window.location.href = "highscores.html";
+  }
+
+}
+ submitInitialBtn.onclick=savedHighScore
+
 
 goBackBtn.addEventListener("click", function () {
   startDiv.style.display = "block";
   highScoreSection.style.display = "none";
 });
 
+//check event listener for reloading the page 
+//variable for score and subtracting the time 
 
 

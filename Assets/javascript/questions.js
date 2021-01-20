@@ -2,10 +2,10 @@ var timer = document.getElementById("timer");
 var timeLeft = document.getElementById("timeLeft");
 var timesUp = document.getElementById("timesUp");
 
-var totalTime = 151;
+var totalTime = 91;
 function newQuiz() {
   questionIndex = 0;
-  totalTime = 150;
+  totalTime = 90;
   timeLeft.textContent = totalTime;
   initialInput.textContent = "";
 
@@ -96,7 +96,6 @@ var submitInitialBtn = document.getElementById("submitInitialBtn");
 var initialInput = document.getElementById("initialInput");
 var quizArea = document.getElementById("quizArea");
 
-// define other variables
 var correctAns = 0;
 var questionNum = 0;
 // var scoreResult;
@@ -122,13 +121,10 @@ function checkAnswer(answer) {
   answerCheck.style.display = "block";
 
   if (questions[questionIndex].answer === questions[questionIndex].choices[answer]) {
-    // correct answer, add 1 score to final score
-    correctAns++;
-    // console.log(correctAns);
-    answerCheck.textContent = "Correct!";
+      correctAns++;
+       answerCheck.textContent = "Correct!";
   } else {
-    // wrong answer, deduct 10 second from timer
-    totalTime -= 10;
+     totalTime -= 10;
     timeLeft.textContent = totalTime;
     answerCheck.textContent = "Wrong! The correct answer is: " + questions[questionIndex].answer;
   }
@@ -142,13 +138,9 @@ function checkAnswer(answer) {
 }
 
 function chooseA() { checkAnswer(0); }
-
 function chooseB() { checkAnswer(1); }
-
 function chooseC() { checkAnswer(2); }
-
 function chooseD() { checkAnswer(3); }
-
 
 function gameOver() {
   summary.style.display = "block";
@@ -159,22 +151,13 @@ function gameOver() {
   finalScore.textContent = correctAns;
 }
 
-// Need to add function for high scores and return the high scores to the high scores page 
 startQuizBtn.addEventListener("click", newQuiz);
 choiceA.addEventListener("click", chooseA);
 choiceB.addEventListener("click", chooseB);
 choiceC.addEventListener("click", chooseC);
 choiceD.addEventListener("click", chooseD);
 
-// //submitInitialBtn.addEventListener("click", function (event) {
-//   storeHighScores(event);
-// });
-
-// //HighScores.addEventListener("click", function (event) {
-//   showHighScores(event);
-// });
-
-function savedHighScore(){
+function saveHighScore(){
   var initials = initialInput.value.trim();
   if (initials !== "") {
     var highScores = JSON.parse(window.localStorage.getItem("highScores")) || [];
@@ -185,19 +168,12 @@ function savedHighScore(){
     console.log(newScore)
     highScores.push(newScore);
     window.localStorage.setItem("highScores", JSON.stringify(highScores));
-    window.location.href = "highscores.html";
+  //  window.location.href = "highscores.html";
+  document.getElementById("highScoreSection").innerHTML=localStorage.getItem("highScores");
   }
-
 }
- submitInitialBtn.onclick=savedHighScore
+ submitInitialBtn.onclick=saveHighScore
 
+ // Need to add function for high scores and return the high scores to the high scores page 
 
-goBackBtn.addEventListener("click", function () {
-  startDiv.style.display = "block";
-  highScoreSection.style.display = "none";
-});
-
-//check event listener for reloading the page 
-//variable for score and subtracting the time 
-
-
+ 

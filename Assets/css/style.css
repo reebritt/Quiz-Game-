@@ -1,41 +1,42 @@
 h1, 
 h2 {
-  color: #313740;
-  font-family: 'Montserrat', sans-serif;
+  color: #467016;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 a {
-  color: #3290A6;
-  font-family: 'Archivo', sans-serif;
+  color: #32a683;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-a:hover {
+/*a:hover {
   color: #99B8BF;
-  font-family: 'Archivo', sans-serif;
-}
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+} */
 
-.btn:focus, .btn:active, .btn:visited {
+ .btn:focus, .btn:active, .btn:visited {
   outline: none !important;
   box-shadow: none !important;
-  background-color: #343a40;
-}
+  background-color: #60e6ae;
+} 
 
 #finalScore {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: bold;
 }
 
 span {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 p {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #questionTitle {
   font-size: 20px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 }
 
 #answerCheck {

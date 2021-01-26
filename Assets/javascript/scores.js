@@ -20,7 +20,6 @@ function printHighScores() {
     });
 }
 
-
 function clearHighScores () {
     window.localStorage.removeItem("highScores")
     window.location.reload()

@@ -1,18 +1,13 @@
-# Quiz-Game-
+# Quiz-Game
 Multi quiz game that will keep score and includes a timer option 
 
 
-used font awesome for the countdown clock 
+# Code Snippet 
+<img src="./Assets/quizcode.png">
+<img src="./Assets/QuizGame1.png">
+<img scr="./Assets/QuizGame2.png">
 
-
-
-
-Issues:
-
-
-
-
-Sources
+# Sources
 Referred to previous homework with sample code to get started. 
 https://www.w3schools.com/html/html_links.asp used to understand linking pages in html
 Homework 2 used for adding bootstrap and understanding placement of the game within a card on the screen 
